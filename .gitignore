@@ -1,2 +1,4 @@
 node_modules
 .DS_Store ## Mac meta-data files we want to ignore!
+
+.DS_Store
