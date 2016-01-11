@@ -2,17 +2,18 @@
   "rooms": [
     {
       "id": "room1",
-      "description": "The first room. The second room is north.",
+      "description": "The first room. The second room is north. There is a flashlight and a gray key in the room",
       "exits": {
         "north": "room2"
-      }
+      },
+      "items": [{"name":"flashlight", "task":"dark"}, {"name":"gray key", "task":"gray lock"}]
     },
     {
       "id": "room2",
-      "description": "The second room. The first room is south.",
+      "description": "The second room. The first room is south. dark",
       "exits": {
         "south": "room1"
       } 
     }
-  ]
+  	] 
 }

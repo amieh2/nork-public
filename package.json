@@ -1,0 +1,19 @@
+{
+  "name": "nork",
+  "version": "1.0.0",
+  "description": "a text based adventure game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amieh2/nork.git"
+  },
+  "author": "Amie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amieh2/nork/issues"
+  },
+  "homepage": "https://github.com/amieh2/nork#readme"
+}
