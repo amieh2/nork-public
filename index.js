@@ -1,5 +1,6 @@
 'use strict';
 
+//Creating a current state object
 var Current ={
     Room:[],
     inventory :[]
@@ -16,6 +17,10 @@ var io = readline.createInterface({ //call the interface "io"
   output: process.stdout //output goes to the terminal ("standard out")
 });
 
+console.log('Welcome to the game of Nork! \n');
+console.log(Current.Room.description); //prints out the current room description
+
+//Function that recusively asks the user of what they want to do. Takes in user input as a parameter
 var askQuestion = function(answer)
 {
     Process(answer.toUpperCase());
@@ -25,28 +30,31 @@ var askQuestion = function(answer)
     }
     if (null === Current)
      {
-        console.log('Bye');
+        console.log('Good Bye');
     	io.close(); //close the whole interface once completely done asking questions   
     }
 }
  io.question('What would you like to do?', askQuestion);
 
+//Function that processes the answer from the four commands the user can input, if its not one of the valid commands
+//The game is over
 function Process(answer)
 {
     if(answer.substr(0,3) === 'GO ') {
         ProcessGo(answer.substr(3).toLowerCase());
     } else if(answer.substr(0,5) === 'TAKE ') {
-        ProcessTake(answer.substr(6).toLowerCase());
+        ProcessTake(answer.substr(5).toLowerCase());
     } else if(answer.substr(0,4) === 'USE ') {
-        ProcessUse(answer.substr(5).toLowerCase());
+        ProcessUse(answer.substr(4).toLowerCase());
     } else if(answer.substr(0,10) === 'INVENTORY') {
         ProcessInventory();
     } else {
-        console.log('Sorry, Game Over');
+        console.log('Sorry, not valid. You died, Game Over!');
         Current = null;
     }
 }
 
+//Function to process the command go. 
 function ProcessGo(data){
     if (Current.Room.exits[data])
     {
@@ -54,7 +62,8 @@ function ProcessGo(data){
         for(var i = 0; i < world.rooms.length; i++) {
             if(world.rooms[i].id === NewRoomName) {
                 Current.rooms = world.rooms[i];
-                console.log('You moved to: ' + data + ' now you see ' + Current.rooms.description);
+                console.log('\n' + 'You moved ' + data + ', now you are in the ' + Current.rooms.id + '.');
+                console.log(Current.rooms.description + '\n');
             }
         }
     }
@@ -65,13 +74,16 @@ function ProcessGo(data){
 
 function ProcessTake(itemName){
     var itemPickedup = false;
-    for(var i = 0; i < Current.Room.items.length; i++) {    
-        if (Current.Room.items[i] === itemName) {
-            Current.inventory.push(Current.room.items[i]);
-            console.log('Picked up: ' + itemName);
+    //for(var i = 0; i < Current.Room.items.length; i++) {    
+        //if (Current.Room.items[i] === itemName) {
+             if(Current.Room.items = itemName) {
+                 console.log('You picked up: ' + itemName);
+             }
+            //console.log('You picked up: ' + itemName);
+            Current.inventory.push(itemName);
             itemPickedup = true;
-        }
-    }
+        //}
+   // }
     if(itemPickedup === false) {
         console.log('Could not find ' + itemName);
     }
@@ -91,7 +103,7 @@ function ProcessUse(data) {
 }
 
 function ProcessInventory() {
-    console.log('Current inventory');  
+    console.log('Current inventory: ');  
     for(var i = 0; i < Current.inventory.length; i++) {
          console.log('   ' +Current.inventory.id);  
     }
