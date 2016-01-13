@@ -10,21 +10,21 @@
     },
     {
       "id": "Kitchen",
-      "description": "You are currently in the kitchen. There is a knife on the table, and you see something moving by the window. There is a door with a lock leading to another room.",
+      "description": "You are currently in the kitchen. There is a key on the table and a door with a lock leading to another room, which is east. You can either take key or go east.",
       "exits": {
         "south": "Hallway",
-        "east": "Bathroom"
+        "east": "Closet"
 
       },
       "items": [{"name":"key", "task":" lock"}]
     },
     {
       "id": "Closet",
-      "description": "You are currently in the closet. ",
+      "description": "You are currently in the closet. There is a knife on the shelf and you hear a noise in the corner.",
       "exits": {
         "west": "Kitchen"
       },
-      "items": [{"name":"gray key", "task":"gray lock"}]
+      "items": [{"name":"knife", "task":"noise"}]
     }
-  	] 
+    ] 
 }

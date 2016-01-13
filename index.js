@@ -55,9 +55,9 @@ function ProcessGo(direction){
         var NewRoomName = Current.Room.exits[direction];
         for(var i = 0; i < world.rooms.length; i++) {
             if(world.rooms[i].id === NewRoomName) {
-                Current.room = world.rooms[i];
-                console.log('\n' + 'You moved ' + direction + ', now you are in the ' + Current.room.id + '.');
-                console.log(Current.room.description + '\n');
+                Current.Room = world.rooms[i];
+                console.log('\n' + 'You moved ' + direction + ', now you are in the ' + Current.Room.id + '.');
+                console.log(Current.Room.description + '\n');
             }
         }
     }
