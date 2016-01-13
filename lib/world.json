@@ -2,7 +2,7 @@
   "rooms": [
     {
       "id": "Hallway",
-      "description": "You are currently in a Dungeon Hallway. The room is dark and there is a flashlight on the ground. You see a light at the end of the hallway leading to the second room, which is north. You can either take flashlight or go north.",
+      "description": "You are currently in the hallway. The room is dark and there is a flashlight on the ground. You see a light at the end of the hallway leading to the second room, which is north. You can either take flashlight or go north.",
       "exits": {
         "north": "Kitchen"
       },
@@ -10,20 +10,21 @@
     },
     {
       "id": "Kitchen",
-      "description": "You are currently in the Dungeon's kitchen. There is a knife on the table, and you see something moving by the window.",
+      "description": "You are currently in the kitchen. There is a knife on the table, and you see something moving by the window. There is a door with a lock leading to another room.",
       "exits": {
         "south": "Hallway",
         "east": "Bathroom"
 
       },
-      "items": [{"name":"gray key", "task":"gray lock"}]
+      "items": [{"name":"key", "task":" lock"}]
     },
     {
-      "id": "Bathroom",
-      "description": "You are currently in the bathroom.",
+      "id": "Closet",
+      "description": "You are currently in the closet. ",
       "exits": {
         "west": "Kitchen"
-      } 
+      },
+      "items": [{"name":"gray key", "task":"gray lock"}]
     }
   	] 
 }
